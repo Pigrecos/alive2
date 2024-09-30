@@ -1,0 +1,42 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 19,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "x64-RelWithDebInfo",
+            "displayName": "RelWithDebInfo (x64)",
+            "description": "RelWithDebInfo build for x64 architecture using VCPKG",
+            "generator": "Visual Studio 17 2022",
+            "toolset": "LLVM_v143",
+            "architecture": {
+                "value": "x86_64",
+                "strategy": "external"
+            },
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+                "CMAKE_PREFIX_PATH": "E:/cxx-common/Deps/installed/x64-windows-static-md-rel/share",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install",
+                "ZLIB_INCLUDE_DIR": "E:/cxx-common/Deps/installed/x64-windows-static-md-rel/include",
+                "ZLIB_LIBRARY": "E:/cxx-common/Deps/installed/x64-windows-static-md-rel/lib/zlib.lib",
+                "Z3_INCLUDE_DIR": "E:/cxx-common/Deps/installed/x64-windows-static-md-rel/include",
+                "Z3_LIBRARIES": "E:/cxx-common/Deps/installed/x64-windows-static-md-rel/lib/libz3.lib",
+                "RE2C": "E:/LLVMInterop/re2c-3.1/__build_clang/re2c.exe",
+                "LLVM_DIR": "E:/cxx-common/Deps/installed/x64-windows-static-md-rel/share/llvm"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "x64-RelWithDebInfo",
+            "configurePreset": "x64-RelWithDebInfo",
+            "displayName": "Build (RelWithDebInfo) (x64)",
+            "description": "Build in RelWithDebInfo mode for x64 architecture",
+            "configuration": "RelWithDebInfo"
+        }
+    ]
+}

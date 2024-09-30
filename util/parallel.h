@@ -28,7 +28,9 @@ struct childProcess {
 };
 
 class parallel {
-#ifndef _WIN32
+#ifdef _WIN32
+  int parent_pid = -1;
+#else
   pid_t parent_pid = -1;
 #endif
   int max_active_children;
@@ -37,6 +39,7 @@ class parallel {
 #ifndef _WIN32
   std::vector<pollfd> pfd;
 #endif
+
   std::vector<int> pfd_map;
   std::vector<childProcess> children;
   std::stringstream &parent_ss;

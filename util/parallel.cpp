@@ -9,7 +9,10 @@
 #include <regex>
 #include <sstream>
 #include <string>
-#ifndef _WIN32
+#ifdef _WIN32
+#include <process.h>
+#include <windows.h>
+#else
 #include <sys/wait.h>
 #include <unistd.h>
 #endif
